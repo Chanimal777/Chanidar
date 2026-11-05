@@ -22,11 +22,11 @@ jobs:
       - name: Make Gradlew Executable
         run: chmod +x gradlew
 
-      - name: Build APK
+      - name: Build Project
         run: ./gradlew build
 
-      - name: Upload APK
+      - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: chanidar-debug-apk
-          path: "**/*.apk"
+          name: build-outputs
+          path: "**/build/"
