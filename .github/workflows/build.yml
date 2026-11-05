@@ -23,6 +23,10 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.5'
+          cache-read-only: false
+          generate-obo-scorecard: false
+        env:
+          GRADLE_BUILD_ACTION_CACHE_ENABLED: 'false'
 
       - name: Build APK with Gradle
         run: gradle assembleDebug
