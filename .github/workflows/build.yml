@@ -19,17 +19,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Set up Gradle 8.5
-        uses: gradle/actions/setup-gradle@v3
-        with:
-          gradle-version: '8.5'
-          cache-read-only: false
-          generate-obo-scorecard: false
-        env:
-          GRADLE_BUILD_ACTION_CACHE_ENABLED: 'false'
+      - name: Install Gradle 8.5 Manually
+        run: |
+          wget https://services.gradle.org/distributions/gradle-8.5-bin.zip
+          unzip -q gradle-8.5-bin.zip
+          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
 
-      - name: Build APK with Gradle
-        run: gradle assembleDebug
+      - name: Build APK
+        run: gradle assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
