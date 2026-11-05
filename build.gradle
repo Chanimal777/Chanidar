@@ -1,8 +1,31 @@
 plugins {
-    id 'com.android.application' version '8.1.0' apply false
+    id 'com.android.application'
     id 'org.jetbrains.kotlin.android' version '1.9.0' apply false
 }
 
-tasks.register('clean', Delete) {
-    delete rootProject.buildDir
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.chanidar.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.chanidar.app"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
 }
