@@ -22,11 +22,11 @@ jobs:
       - name: Make Gradlew Executable
         run: chmod +x gradlew
 
-      - name: Build Project
-        run: ./gradlew build
+      - name: Clean and Build Project
+        run: ./gradlew clean build
 
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-outputs
-          path: "**/build/"
+          path: "**/build/**"
