@@ -4,15 +4,17 @@ plugins {
 }
 
 android {
-    namespace 'com.chanidar.app'
+    namespace 'com.chanidar.radar'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.chanidar.app"
+        applicationId "com.chanidar.radar"
         minSdk 28
         targetSdk 34
         versionCode 1
         versionName "1.0"
+    }
+}
     }
 
     buildTypes {
