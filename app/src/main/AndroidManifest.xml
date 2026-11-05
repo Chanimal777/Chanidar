@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <application
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="Chanidar Radar"
-        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+   <application
+    android:allowBackup="true"
+    android:label="@string/app_name"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".SettingsActivity"
             android:exported="true">
             <intent-filter>
